@@ -9,14 +9,6 @@ import { Container } from "./styles";
 export function Summary() {
   const { transactions } = useTransactions();
 
-  // const totalDeposits = transactions.reduce((acc, transaction) => {
-  //   if (transaction.type === 'deposit'){
-  //     return acc + transaction.amount;
-  //   }
-    
-  //   return acc;
-  // }, 0);
-
   const summary = transactions.reduce((acc, transaction) => {
     if(transaction.type === 'deposit') {
       acc.deposits += transaction.amount;
